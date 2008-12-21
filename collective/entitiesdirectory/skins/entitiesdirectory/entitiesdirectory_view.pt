@@ -1,0 +1,118 @@
+<html metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone" >
+<body>
+
+<div metal:fill-slot="main" >
+
+        <!-- header, H1 with title in it -->
+        <metal:header define-macro="header">
+        </metal:header>
+                
+        <!-- body macro where all the fields are -->
+        <metal:body define-macro="body">
+        
+                <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 tal:content="context/Title" >Title</h1>
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        
+        <p class="documentDescription" tal:content="structure here/getSlogan" />
+
+        <!-- <p class="documentDescription">
+            <metal:field use-macro="python:here.widget('slogan', mode='view')">
+            Slogan
+            </metal:field>
+        </p> -->   
+        <!-- <p tal:content="structure here/getSlogan" /> -->        
+        <!-- <p tal:content="context/Slogan" /> -->
+        <!-- <p class="documentSlogan"
+       tal:content="context/Slogan"
+       tal:condition="context/Slogan">
+        Slogan
+    </p> -->
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        
+        <div class="newsImageContainer"
+             tal:condition="here/image_mini|nothing">
+            <a href="#"
+               tal:attributes="href string:$here_url/image/image_view_fullscreen"
+               id="parent-fieldname-image">
+               <img tal:replace="structure python: here.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+               <!-- POSIBLES CÓDIGOS PARA ANNOTATIONSTORAGE:
+<img tal:replace="python: context.getField('image').tag(context, scale='mini', css_class='newsImage')" src="" alt="" />
+<img tal:replace="python: context.getField('image').tag(context, scale='mini', css_class='newsImage')" />
+<img tal:replace="python: context.getField('image').tag(scale='mini', css_class='newsImage')" src="" alt="" />
+<img tal:replace="python: context.getField('image').tag(context, size='mini')" src="" alt="" />
+<img tal:replace="python: context.getField('image').tag(context, size='mini')" />
+               <img tal:replace="python: context.getField('image').tag(context, scale='mini')" /> -->
+            </a>
+        </div>
+        
+        <p>
+        <metal:field use-macro="python:context.widget('text', mode='view')">
+        Text
+        </metal:field>
+        </p>
+        
+        <p><strong>Sitio web:</strong>
+                <a href="#" 
+                     tal:attributes="href context/getWebSite;"
+                     tal:content="context/getWebSite" >webSite</a>
+        </p>
+
+        <p><strong>Correo electrónico:</strong>
+                <a href="#"
+                     tal:condition="context/email|nothing"
+                     tal:attributes="href string:mailto:${context/getObfuscatedEmail}"
+                     tal:content="context/getObfuscatedEmail"
+                     title="Cambie -antispam- por @ y elimine @$%&.com para obtener la direcci&oacute;n correcta" >email</a>
+        </p>
+                
+        <p><strong>Teléfono fijo:</strong>
+        <span tal:content="structure here/getPhone" />
+        
+        <p><strong>Teléfono móvil:</strong>
+        <span tal:content="structure here/getMobile" />
+        
+        <p><strong>Fax:</strong> 
+        <span tal:content="structure here/getFax" />
+        
+        <p><strong>Domicilio:</strong> 
+        <span tal:content="structure here/getAddress" />
+        
+        <p><strong>CP:</strong> 
+        <span tal:content="structure here/getZip" />
+        
+        <p><strong>Localidad:</strong> 
+        <span tal:content="structure here/getCity" />
+        
+        <p><strong>Provincia:</strong> 
+        <span tal:content="structure here/getProvince" />
+        
+        <p><strong>País:</strong>
+        <span tal:content="structure here/getCountry" />
+        
+        <p><strong>Ámbito Territorial:</strong>
+        <span tal:content="structure here/getTerritorialScope" />
+        
+        <p><strong>Temas:</strong> 
+        <span tal:content="structure here/getTopics" />
+                        
+        </metal:body>
+                
+        <!-- folderlisting that shows sub-objects if there are any -->
+        <metal:folderlisting define-macro="folderlisting"> 
+        </metal:folderlisting>
+        
+        <!-- footer, by line created date etc. -->
+        <metal:footer define-macro="footer">
+        </metal:footer>
+
+    
+</div>
+
+</body>
+
+</html>

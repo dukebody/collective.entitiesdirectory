@@ -1,0 +1,27 @@
+Metadata-Version: 1.0
+Name: collective.entitiesdirectory
+Version: 0.1dev
+Summary: A multi-use directory valid for ONGs, students groups and more.
+Home-page: http://svn.plone.org/svn/plone/plone.example
+Author: Manuel Gualda and Israel Saeta
+Author-email: dukebody@gmail.com
+License: GPL
+Description: Introduction
+        ============
+        
+        
+        
+        Changelog
+        =========
+        
+        0.1 - Unreleased
+        ----------------
+        
+        * Initial release
+        
+        
+Keywords: directory
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
