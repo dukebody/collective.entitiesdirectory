@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
 import os
 
@@ -15,7 +16,7 @@ setup(name='collective.entitiesdirectory',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='directory',
-      author='Manuel Gualda and Israel Saeta',
+      author='Manuel Gualda Caballero and Israel Saeta Pérez',
       author_email='dukebody@gmail.com',
       url='http://svn.plone.org/svn/plone/plone.example',
       license='GPL',
