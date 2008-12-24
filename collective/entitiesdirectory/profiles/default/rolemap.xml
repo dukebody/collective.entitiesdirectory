@@ -7,5 +7,11 @@
       <role name="Contributor"/>
       <role name="Member"/>
     </permission>
+    <permission name="collective.entitiesdirectory: Add Entity" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+      <role name="Member"/>
+    </permission>
   </permissions>
 </rolemap>

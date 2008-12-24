@@ -4,4 +4,6 @@
     name="title"> Controls the available content types in your portal </property>
  <object name="EntitiesDirectory"
     meta_type="Factory-based Type Information"/>
+ <object name="Entity"
+    meta_type="Factory-based Type Information"/>
 </object>

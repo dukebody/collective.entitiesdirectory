@@ -1,1 +1,1 @@
-import entitiesdirectory
+import entitiesdirectory, entity

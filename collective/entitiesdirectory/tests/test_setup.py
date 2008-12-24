@@ -3,7 +3,7 @@ from base import EntitiesDirectoryTestCase
 class TestProductInstall(EntitiesDirectoryTestCase):
 
     def afterSetUp(self):
-        self.types = ('EntitiesDirectory',)
+        self.types = ('EntitiesDirectory', 'Entity',)
 
     def testTypesInstalled(self):
         for t in self.types:
@@ -20,6 +20,15 @@ class TestInstantiation(EntitiesDirectoryTestCase):
     def testCreateEntitiesDirectory(self):
         self.folder.invokeFactory('EntitiesDirectory', 'im1')
         self.failUnless('im1' in self.folder.objectIds())
+
+    def testEntityNotGloballyAllowed(self):
+        self.assertRaises(ValueError, self.folder.invokeFactory, 'Entity', 'e1')
+
+    def testCreateEntityInsideDirectory(self):
+        self.folder.invokeFactory('EntitiesDirectory', 'im1')
+        self.im1 = getattr(self.folder, 'im1')
+        self.im1.invokeFactory('Entity', 'e1')
+        self.failUnless('e1' in self.im1.objectIds())
 
 def test_suite():
     from unittest import TestSuite, makeSuite
