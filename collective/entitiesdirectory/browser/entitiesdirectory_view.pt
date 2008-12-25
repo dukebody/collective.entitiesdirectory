@@ -1,0 +1,34 @@
+<html metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone" >
+<body>
+
+<div metal:fill-slot="main" >
+
+    <!-- body macro where all the fields are -->
+    <metal:body define-macro="body">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 tal:content="context/Title" >Title</h1>
+
+        <form action=".">
+            <label for="searchText">Texto de búsqueda</label>
+            <input name="searchText"
+                   type="text"
+                   tal:attributes="value request/form/searchText | nothing" />
+
+            <input type="submit" value="buscar" />
+        </form>
+
+        <ul>
+            <li tal:repeat="entity context/getFolderContents"
+                tal:content="entity/Title">entity</li>
+        </ul>
+
+    </metal:body>
+
+</div>
+
+</body>
+
+</html>

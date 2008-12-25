@@ -1,0 +1,15 @@
+<configure xmlns="http://namespaces.zope.org/browser">
+
+<page for="collective.entitiesdirectory.interfaces.IEntitiesDirectory"
+    name="entitiesdirectory_view"
+    template="entitiesdirectory_view.pt"
+    permission="zope2.View"
+    />
+
+<page for="collective.entitiesdirectory.interfaces.IEntity"
+    name="entity_view"
+    template="entity_view.pt"
+    permission="zope2.View"
+    />
+
+</configure>
