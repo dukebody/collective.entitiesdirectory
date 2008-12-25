@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<object name="portal_skins" meta_type="CMF Skins Tool">
- <object name="entitiesdirectory" meta_type="Filesystem Directory View"
-    directory="collective.entitiesdirectory:skins/entitiesdirectory"/>
- <skin-path name="*">
-  <layer name="entitiesdirectory" insert-after="custom"/>
- </skin-path>
-</object>
