@@ -105,7 +105,7 @@ class Entity(atapi.BaseContent):
 
     schema = EntitySchema
 
-    _at_rename_after_creation = True  # ??? isn't this the default?
+    _at_rename_after_creation = True
 
     def getObfuscatedEmail(self):
         """Get a modified version of email so spambots can't read it.

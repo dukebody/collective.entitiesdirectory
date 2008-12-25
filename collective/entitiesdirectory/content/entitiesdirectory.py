@@ -20,4 +20,6 @@ class EntitiesDirectory(atapi.BaseFolder):
 
     schema = EntitiesDirectorySchema
 
+    _at_rename_after_creation = True
+
 atapi.registerType(EntitiesDirectory, PROJECTNAME)
