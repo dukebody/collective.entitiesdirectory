@@ -17,12 +17,15 @@
                    type="text"
                    tal:attributes="value request/form/searchText | nothing" />
 
-            <input type="submit" value="buscar" />
+            <input type="submit" name="search" value="buscar" />
         </form>
 
         <ul>
-            <li tal:repeat="entity context/getFolderContents"
-                tal:content="entity/Title">entity</li>
+            <li tal:repeat="entity view/getEntities">
+              <a href="#"
+                 tal:content="entity/Title"
+                 tal:attributes="href entity/getURL">entity</a>
+            </li>
         </ul>
 
     </metal:body>

@@ -2,7 +2,7 @@
 
 <page for="collective.entitiesdirectory.interfaces.IEntitiesDirectory"
     name="entitiesdirectory_view"
-    template="entitiesdirectory_view.pt"
+    class=".entitiesdirectory.EntitiesDirectoryView"
     permission="zope2.View"
     />
 
