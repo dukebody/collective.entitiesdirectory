@@ -3,13 +3,11 @@ from Products.CMFCore import utils
 from Products.CMFCore.DirectoryView import registerDirectory
 
 # Product imports
-from config import PROJECTNAME, SKINS_DIR, GLOBALS
+from config import PROJECTNAME
 # Import the content types modules
 from content import *
 # Import the content types permissions
 from permissions import ADD_CONTENT_PERMISSIONS
-
-registerDirectory(SKINS_DIR, GLOBALS)
 
 
 def initialize(context):
